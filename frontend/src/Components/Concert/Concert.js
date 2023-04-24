@@ -28,9 +28,9 @@ function Concert() {
     }, [])
 
     useEffect(() => {
-        axios.get("http://" + window.location.hostname + ":5000/getSession")
+        axios.get("https://event-organization.onrender.com/getSession")
             .then(response => {
-                axios.get("http://" + window.location.hostname + ":5000/checkLike/" + event.cardId + "/" + response.data.userName.username)
+                axios.get("https://event-organization.onrender.com/checkLike/" + event.cardId + "/" + response.data.userName.username)
                     .then(response => {
                         if (response.data.length > 0) {
                             setLike(true);
@@ -46,14 +46,14 @@ function Concert() {
     const handleLike = () => {
         setLike(!like);
         if (!like) {
-            axios.post("http://" + window.location.hostname + ":5000/addLikedEvents", { cardID: event.cardId, eventType: event.eventType });
+            axios.post("https://event-organization.onrender.com/addLikedEvents", { cardID: event.cardId, eventType: event.eventType });
         } else {
-            axios.delete("http://" + window.location.hostname + ":5000/deleteLike/" + event.cardId);
+            axios.delete("https://event-organization.onrender.com/deleteLike/" + event.cardId);
         }
     }
 
     const checkSession = () => {
-        axios.get("http://" + window.location.hostname + ":5000/checkSession")
+        axios.get("https://event-organization.onrender.com/checkSession")
             .then(response => {
                 console.log("login status: " + response.data.login);
                 if (!response.data.login) {

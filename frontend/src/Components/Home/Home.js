@@ -25,7 +25,7 @@ function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://" + window.location.hostname + ":5000/getSession")
+        axios.get("https://event-organization.onrender.com/getSession")
             .then(response => {
                 setUser(response.data.userName.username);
                 setUserobj(response.data);
@@ -33,7 +33,7 @@ function Home() {
     }, [])
 
     useEffect(() => {
-        axios.get("http://" + window.location.hostname + ":5000/getEvents")
+        axios.get("https://event-organization.onrender.com/getEvents")
             .then(response => {
                 if (response.data.length != 0) {
                     console.log("In frontend", response.data);
@@ -57,7 +57,7 @@ function Home() {
 
     const manageLikedEvents = (e) => {
         handleNavbar(e);
-        axios.get("http://" + window.location.hostname + ":5000/getLikedEvents/"+user)
+        axios.get("https://event-organization.onrender.com/getLikedEvents/"+user)
             .then(response => {
                 var data = allEvents[0].filter(event => {
                     for (let i = 0; i < response.data.length; i++) {
@@ -123,7 +123,7 @@ function Home() {
     }
 
     const handleAccount = (e) => {
-        axios.get("http://"+window.location.hostname+":5000/getSession")
+        axios.get("https://event-organization.onrender.com/getSession")
             .then(response => {
                 navigate('/account', {state: response.data})
             })
@@ -148,7 +148,7 @@ function Home() {
     } 
 
     const handleLogout = () => {
-        axios.get("http://"+window.location.hostname+":5000/logout")
+        axios.get("https://event-organization.onrender.com/logout")
             .then(response => {
                 console.log(response);
                 if(response.data.logout) {

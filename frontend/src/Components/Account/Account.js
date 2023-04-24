@@ -111,7 +111,7 @@ function Account() {
     const handleSubmit = () => {
 
         if (haveAccount) {
-            axios.post("http://" + window.location.hostname + ":5000/login", newUser, { withCredentials: true })
+            axios.post("https://event-organization.onrender.com/login", newUser, { withCredentials: true })
                 .then(response => {
                     console.log(response.data);
                     if (response.data.login) {
@@ -129,7 +129,7 @@ function Account() {
                     }
                 })
         } else {
-            axios.post("http://" + window.location.hostname + ":5000/register", newUser, { withCredentials: true })
+            axios.post("https://event-organization.onrender.com/register", newUser, { withCredentials: true })
                 .then(response => {
                     if (response.data.registered) {
                         if (location.state) {
@@ -161,7 +161,7 @@ function Account() {
     }
 
     const handleUpdate = () => {
-        axios.put("http://" + window.location.hostname + ":5000/updateUser/" + location.state?.userName?._id, updatedUser, { withCredentials: true })
+        axios.put("https://event-organization.onrender.com/updateUser/" + location.state?.userName?._id, updatedUser, { withCredentials: true })
             .then(response => {
                 if (response.data.docs) {
                     document.getElementById("confirmation").style.display = "flex";
@@ -222,7 +222,7 @@ function Account() {
     }
 
     const handleSubmitEvent = () => {
-        axios.post("http://" + window.location.hostname + ":5000/registerEvent", event)
+        axios.post("https://event-organization.onrender.com/registerEvent", event)
             .then(response => {
                 if (response.data.sent) {
                     navigate('/');

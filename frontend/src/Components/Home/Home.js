@@ -27,6 +27,7 @@ function Home() {
     useEffect(() => {
         axios.get("https://event-organization.onrender.com/getSession")
             .then(response => {
+                console.log("work yaar", response);
                 setUser(response.data.userName.username);
                 setUserobj(response.data);
             })

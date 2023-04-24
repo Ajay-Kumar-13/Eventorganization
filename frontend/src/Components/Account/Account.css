@@ -1,0 +1,180 @@
+body {
+    background-color: black;
+}
+
+.account {
+    background: linear-gradient(to bottom, rgb(116, 13, 13), black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.createAccount {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: gray;
+    font-size: 20px;
+}
+
+.haveAccount {
+    margin-top: 10px;
+}
+
+.account .form {
+    padding: 20px;
+    text-align: center;
+}
+
+.form .form-control {
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0);
+    color: white;
+    border-radius: 0px;
+}
+
+.form .btn {
+    color: white;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px 20px;
+    
+
+}
+
+.form .btn:hover {
+    background-color: #010101;
+    color: white;
+}
+
+.form .form-control::placeholder {
+    color: gray;
+}
+
+.form input {
+    padding: 15px;
+}
+
+.form .form-check-input {
+    padding: 0;
+    margin-right :10px;
+    margin-left: 15px;
+}
+
+.form .form-check {
+    color: gray;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+
+}
+
+.userDetails {
+    padding: 25px;
+}
+
+.userDetails .button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.confirmation {
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: rgba(212, 237, 218,1);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #010101;
+}
+
+.error {
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: rgba(114, 28, 36,1);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.createEvent {
+    margin-top: 20px;
+    background:rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 70px;
+}
+
+.dateandtime {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.dateandtime .child {
+    justify-content: space-evenly;
+    display: flex;
+    margin: 10px 0;
+}
+
+.child input {
+    padding: 5px;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    height: auto;
+}
+
+.createEvent textarea {
+    width: 100%;
+}
+
+.createEvent button {
+    margin-top: 20px;
+    margin-left: 8rem;
+}
+
+.add {
+    position: relative;
+}
+
+.addSymbol {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    position: absolute;
+    right: 0;
+    bottom: 3%;
+    margin-right: 5px;
+}
+
+.timeselector {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.timeselector input {
+    padding: 4px;
+    border-radius: 8px;
+}

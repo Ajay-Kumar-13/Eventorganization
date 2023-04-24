@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  mongodb:
+    image: "mongo"
+    expose:
+      - "27017"
+    volumes:
+      - data:/data/db
+    ports:
+      - "27017:27017"
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - logs:/app/logs
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+  frontend:
+    build: ./frontend
+    restart: always
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+volumes:
+  data:
+  logs:

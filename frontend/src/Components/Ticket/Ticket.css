@@ -1,0 +1,110 @@
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.ticketBody {
+    background: linear-gradient(to bottom, rgb(116, 13, 13), black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+/* Topbar */
+
+.topbar {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.left,.nodes {
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+}
+
+.mainTitle {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Ticket */
+
+.ticket {
+    padding: 20px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.2);
+    margin: auto;
+    border-radius: 50px;
+    position: relative;
+    color: black;
+}
+
+.ticket .card {
+    width: 100%;
+    border-radius: 50px 50px 0 0;
+    background: transparent;
+    border: none;
+}
+
+.ticket .card img {
+    border-radius: 50px 50px 0 0;
+}
+
+.ticket .card-body {
+    margin-top: 10px;
+    background: white;
+    border-radius: 0 0 50px 50px;
+    text-align: center;
+    padding: 25px;
+}
+
+.ticket .dottedline {
+    border-top: dashed;
+}
+
+.ticket .venue .myrow {
+    display: flex;
+    flex-direction: row;
+    color: gray;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.ticket .venue .myrow.dark {
+    color: black;
+    font-weight: bold;
+}
+
+/* FOoter */
+
+.ticketFooter {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.ticketFooter .Button {
+    padding: 20px;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+    margin: 0 20px;
+}

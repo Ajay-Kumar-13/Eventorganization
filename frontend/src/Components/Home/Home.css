@@ -1,0 +1,292 @@
+h3,
+h4,
+h6 {
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+
+.homeBody {
+    background: linear-gradient(to bottom, rgb(116, 13, 13), black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.topbar {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.bars,
+.astronaut {
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+}
+
+#toogleDiv {
+    width: 100%;
+    background-color: black;
+    height: 175px;
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    display: none;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+#toogleDiv div:first-child {
+    margin-top: 16px;
+}
+
+#toogleDiv div:last-child {
+    margin-bottom: 16px;
+}
+
+#settingDiv {
+    width: 100%;
+    background-color: black;
+    height: 175px;
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    display: none;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+#settingDiv div:first-child {
+    margin-top: 16px;
+}
+
+#settingDiv div:last-child {
+    margin-bottom: 16px;
+}
+
+
+
+/* search bar */
+
+.search {
+    padding: 0 20px 20px 20px;
+    color: white;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.searchbar input {
+    border: none;
+    color: white;
+}
+
+.searchbar input:focus {
+    border: none;
+}
+
+.fa-magnifying-glass {
+    margin: 0 10px;
+}
+
+.searchbar input {
+    background: transparent;
+    border-style: none;
+    width: 100%;
+}
+
+.searchbar input::placeholder {
+    color: white;
+}
+
+/* upcoming events */
+
+.navbar {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    width: 100%;
+}
+
+.upcomingevents .title {
+    justify-content: flex-start;
+}
+
+.upcomingevents .seeAllLink {
+    justify-content: flex-end;
+}
+
+.seeAllLink a {
+    color: white;
+    text-decoration: none;
+}
+
+/* buttons */
+
+.buttons {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.buttons .button {
+    width: 30%;
+    height: 60px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.buttons .button .icon {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.buttons .active {
+    background-color: rgb(237, 31, 66);
+}
+
+.buttons .active .icon {
+    color: rgb(237, 31, 66);
+}
+
+/* Events */
+
+.events {
+    padding: 0 20px 20px 20px;
+}
+
+.events .card {
+    width: 100%;
+    background-color: transparent;
+    margin: 20px 0;
+}
+
+.events img {
+    border-radius: 30px 30px 0 0;
+    position: relative;
+}
+
+.events .card-body {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0 0 30px 30px;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.events .card-body .venue {
+    display: flex;
+    flex-direction: column;
+}
+
+.events .date {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.events .fare {
+    background-color: white;
+    border-radius: 30px;
+    padding: 7px;
+    font-weight: bolder;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    color: black;
+}
+
+.events .card:last-child {
+    margin-bottom: 70px;
+}
+
+/* Bottomnavbar */
+
+.bottomNavbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 0;
+    position: fixed;
+    background-color: black;
+
+}
+
+.bottomNavbar .ficon {
+    font-size: 25px;
+    color: white;
+    padding: 0;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottomNavbar .ficon.active {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(237, 31, 66);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -15,7 +15,7 @@ app.set("trust proxy", 1);
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors({
-    origin:'http://localhost:4000',
+    origin:'https://scintillating-centaur-4eb964.netlify.app',
     credentials:true,
 }));
 app.use(cookieParser());

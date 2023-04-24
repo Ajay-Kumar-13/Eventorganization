@@ -103,6 +103,7 @@ router.post("/login", (req, res) => {
     User.findOne({ username: req.body.name }, (err, docs) => {
         if (!err && docs) {
             if (docs.password === req.body.password) {
+                console.log("request", req.session);
                 req.session.userName = docs
                 return res.json({ login: true });
             }

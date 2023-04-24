@@ -46,7 +46,7 @@ function Home() {
 
     const manageEvents = (e) => {
         handleNavbar(e);
-        axios.get("http://" + window.location.hostname + ":5000/getEvents")
+        axios.get("https://event-organization.onrender.com/getEvents")
             .then(response => {
                 if (response.data.length != 0) {
                     console.log("In frontend", response.data);

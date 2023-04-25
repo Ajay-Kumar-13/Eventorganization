@@ -18,7 +18,7 @@ app.use(cors({
     origin:'https://event-organization-bif6.onrender.com',
     credentials:true,
 }));
-app.get('/', (req, res) -> {
+app.get('/', (req, res) => {
     res.setHeader("Access-Control-Allow-Credentials", "true");
 })
 app.use(cookieParser());

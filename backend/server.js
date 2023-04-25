@@ -15,7 +15,7 @@ app.set("trust proxy", 1);
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors({
-    origin:'https://scintillating-centaur-4eb964.netlify.app',
+    origin:'https://event-organization-bif6.onrender.com',
     credentials:true,
 }));
 app.get('/', (req, res) -> {

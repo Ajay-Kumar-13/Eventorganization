@@ -18,6 +18,9 @@ app.use(cors({
     origin:'https://scintillating-centaur-4eb964.netlify.app',
     credentials:true,
 }));
+app.get('/', (req, res) -> {
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+})
 app.use(cookieParser());
 app.use(session({secret: 'Your_Secret_Key', resave: false, saveUninitialized: false, key: "user_sid"}))
     

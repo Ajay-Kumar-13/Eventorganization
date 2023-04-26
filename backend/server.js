@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     res.setHeader("Access-Control-Allow-Credentials", "true");
 });
 app.use(cookieParser());
-app.use(session({secret: 'Your_Secret_Key', resave: true, saveUninitialized: true, key: "user_sid", cookie: {secure: true}}));
+app.use(session({secret: 'Your_Secret_Key', resave: false, saveUninitialized: false, key: "user_sid", cookie:{secure: true, maxAge: 1000*60*60, sameSite: "none"}}));
     
 app.use('/',Router);
 

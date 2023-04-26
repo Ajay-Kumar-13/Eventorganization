@@ -106,7 +106,11 @@ router.post("/login", (req, res) => {
                 console.log("request", req.session);
                 req.session.userName = docs
                 return res.json({ login: true });
+            } else {
+                return res.json({login: false});
             }
+        } else {
+            return res.json({login: false})
         }
     })
 })

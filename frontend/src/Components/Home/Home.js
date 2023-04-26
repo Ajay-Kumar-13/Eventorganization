@@ -19,10 +19,15 @@ function Home() {
     const [allEvents, setAllEvents] = useState([]);
     const [user, setUser] = useState();
     const [userObj, setUserobj] = useState();
+    const [width, setWidth] = useState(window.screen.width);
 
     axios.defaults.withCredentials = true;
 
     const navigate = useNavigate();
+    
+    setInterval(() => {
+        setWidth(window.screen.width)
+    },1000);
 
     useEffect(() => {
         axios.get("https://event-organization.onrender.com/getSession")
@@ -68,6 +73,7 @@ function Home() {
                     }
                 })
                 setAllEvents([data]);
+                setEvents([data]);
             })
     }
 
@@ -154,6 +160,7 @@ function Home() {
                 console.log(response);
                 if(response.data.logout) {
                     navigate('/');
+                    window.location.reload();
                 }
             })
     }
@@ -162,6 +169,9 @@ function Home() {
     return (
         <React.Fragment>
             {/* Topbar */}
+        
+        {
+        width <= 600 ?
             <div className="homeBody">
                 <div class="topbar">
 
@@ -277,7 +287,14 @@ function Home() {
                         </div>
                     </div>
                 </div>
+            </div> :
+            <div class="container">
+                <h1 class="display-4">We are Sorry to say this!</h1>
+                        <p class="lead">This Application does not work in the Desktop view.</p>
+                        <hr class="my-4" />
+                        <p>Desktop view is under Maintainance.</p>
             </div>
+}
         </React.Fragment>
     )
 }

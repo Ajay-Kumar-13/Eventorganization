@@ -12,7 +12,8 @@ import Descrpt from "./Descrpt";
 function Account() {
 
     axios.defaults.withCredentials = true;
-
+    
+    const [showerror, setshowerror] = useState(false);
     const [user, setUser] = useState(null);
     const [show, setShow] = useState(false);
     const [haveAccount, sethaveAccount] = useState(false);
@@ -126,6 +127,14 @@ function Account() {
 
                     } else {
                         navigate("/account");
+                        setshowerror(true);
+                        setInterval(() => {
+                            setshowerror(false);
+                        }, 2000);
+                        setnewUser({
+                            name: "",
+                            password: ""
+                        })
                     }
                 })
         } else {
@@ -401,8 +410,10 @@ function Account() {
                                             <label class="form-check-label" for="checkbox">I want to create Events</label>
                                         </div>
                                     }
-
-
+                                    {
+                                        showerror && <div class="alert alert-warning" role="alert">Login Failed!</div>
+                                    }
+        
                                     <button className="btn" onClick={handleSubmit}>{haveAccount ? "Login" : "Sign Up"}</button>
 
                                 </div>

@@ -55,7 +55,7 @@ app.use(cors({
     credentials:true,
 }));
 app.use(cookieParser());
-app.use(session({secret: 'Your_Secret_Key', resave: false, saveUninitialized: false, key: "user_sid"}))
+app.use(session({secret: 'Your_Secret_Key', resave: false, saveUninitialized: false, key: "user_sid", cookie:{secure: true, maxAge: 1000*60*60, sameSite: "none"}}))
 
 app.use('/',Router);
 

@@ -157,7 +157,6 @@ function Home() {
     const handleLogout = () => {
         axios.get("https://event-organization.onrender.com/logout")
             .then(response => {
-                
                 if(response.data.logout) {
                     navigate('/');
                     window.location.reload();

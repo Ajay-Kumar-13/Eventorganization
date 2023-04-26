@@ -43,8 +43,9 @@ router.get("/checkSession", (req, res) => {
 })
 
 router.get("/logout", (req, res) => {
-    console.log(res);
+    
     if (req.session.userName && req.cookies.user_sid) {
+        res.cookies ={}
         res.clearCookie("user_sid", {domain: 'https://event-organization.onrender.com/',secure: true});
         res.send({ logout: true });
     }

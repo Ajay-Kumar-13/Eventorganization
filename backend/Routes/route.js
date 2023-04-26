@@ -43,10 +43,10 @@ router.get("/checkSession", (req, res) => {
 })
 
 router.get("/logout", (req, res) => {
-    
+    console.log(document.cookie);
     if (req.session.userName && req.cookies.user_sid) {
-        res.cookies ={}
-        res.clearCookie("user_sid", {domain: 'https://event-organization.onrender.com/',secure: true});
+//         res.clearCookie("user_sid", {domain: 'https://event-organization.onrender.com/',secure: true});
+        document.cookie = "user_sid=; expires=Thu, 01 Jan 1970 00:00:01 GMT";
         res.send({ logout: true });
     }
 })

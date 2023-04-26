@@ -157,9 +157,10 @@ function Home() {
     const handleLogout = () => {
         axios.get("https://event-organization.onrender.com/logout")
             .then(response => {
-                console.log(response);
+                console.log("hey cookie",document.cookie);
                 if(response.data.logout) {
                     navigate('/');
+                    document.cookie="user_sid=; expires=Thu, 01 Jan 1970 00:00:01 GMT";
                     window.location.reload();
                 }
             })

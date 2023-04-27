@@ -43,13 +43,20 @@ router.get("/checkSession", (req, res) => {
 })
 
 router.get("/logout", (req, res) => {
-    
-    if (req.session.userName && req.cookies.user_sid) {
-        res.clearCookie("user_sid", {path: "/", domain: "https://event-organization.onrender.com"});
-        
+  if (req.session.userName && req.cookies.user_sid) {
+    req.session.destroy((error) => {
+      if (error) {
+        console.log(error);
+      } else {
+        res.clearCookie("user_sid", {
+          path: "/",
+          domain: "https://event-organization.onrender.com",
+        });
         res.send({ logout: true });
-    }
-})
+      }
+    });
+  }
+});
 
 router.post("/addLikedEvents", (req, res) => {
     const user = req.session.userName;

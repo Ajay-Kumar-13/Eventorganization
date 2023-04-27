@@ -367,9 +367,9 @@ function Account() {
                                             <label for="fare">Fare</label>
                                             <input id="fare" name="fare" value={event.fare} onChange={handleEventForm} className="form-control" placeholder="Cost of this Event"></input>
                                         </div>
-
-                                        <button className="btn btn-outline-success" onClick={handleSubmitEvent}>Submit</button>
-
+                                        <div className="button">
+                                            <button className="btn btn-outline-success" onClick={handleSubmitEvent}>Submit</button>
+                                        </div>
                                     </div>
                                     : null
                             }
